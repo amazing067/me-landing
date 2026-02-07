@@ -10,6 +10,9 @@ dist/
 .env.local
 .env.*.local
 
+# GitHub token 등 비밀 (실수로 커밋 방지)
+ghp_*.txt
+
 # Logs
 npm-debug.log*
 yarn-debug.log*

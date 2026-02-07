@@ -38,7 +38,6 @@ export function Hero() {
               </span>
             </div>
           )}
-          <span className="text-[11px] text-gray-400 hidden sm:inline">{config.company}</span>
         </div>
         {config.amazingLogo && (
           <img
