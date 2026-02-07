@@ -23,4 +23,7 @@ export const config = {
     blog: 'https://blog.naver.com/insureport_',
     youtube: '',
   },
+
+  // 명함 QR에 찍을 랜딩 주소 (동료별로 다른 주소 넣을 수 있음)
+  landingUrl: 'https://me.어메이징사업부.com',
 }

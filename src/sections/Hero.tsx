@@ -73,7 +73,7 @@ export function Hero() {
           </p>
 
           {/* QR 전용 안내 */}
-          <div className="bg-navy-800/50 border border-cyan-glow/15 rounded-lg sm:rounded-xl px-4 py-3 sm:px-5 sm:py-4 mb-5 sm:mb-6 text-left">
+          <div className="bg-navy-800/50 border border-cyan-glow/15 rounded-lg sm:rounded-xl px-4 py-3 sm:px-5 sm:py-4 mb-4 text-left">
             <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
               명함을 통해 방문해 주셔서 감사합니다. 보험·보상 상담, 웹/앱·IT 구축, 유튜브 제작, 시뮬레이션·AI 교육 문의는
               아래 버튼으로 편하게 연락 주세요.
