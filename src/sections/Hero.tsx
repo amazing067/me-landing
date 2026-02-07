@@ -10,7 +10,7 @@ export function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 pt-6 sm:pt-8 pb-10 sm:pb-16 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center px-4 sm:px-6 pt-2 sm:pt-3 pb-10 sm:pb-16 overflow-hidden">
       {/* 회로 느낌 장식 */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 right-10 w-32 h-32 border border-cyan-glow/20 rounded-lg rotate-12" />
@@ -48,12 +48,12 @@ export function Hero() {
         )}
       </header>
 
-      <div className="relative z-10 text-center max-w-xl mx-auto w-full">
+      <div className="relative z-10 text-center max-w-xl mx-auto w-full mt-0">
         {/* 명함 한 장 카드 */}
-        <div className="namecard-card px-5 py-6 sm:px-8 sm:py-8 rounded-2xl">
+        <div className="namecard-card px-5 py-5 sm:px-8 sm:py-6 rounded-2xl">
           {/* 프로필 사진 (있을 때만) + 테두리 glow */}
           {config.profile && (
-            <div className="mt-2 sm:mt-4 mb-4 sm:mb-5 flex justify-center">
+            <div className="mt-0 sm:mt-1 mb-3 sm:mb-4 flex justify-center">
               <img
                 src={config.profile}
                 alt={config.name}
@@ -73,56 +73,46 @@ export function Hero() {
           </p>
 
           {/* QR 전용 안내 */}
-          <div className="bg-navy-800/50 border border-cyan-glow/15 rounded-lg sm:rounded-xl px-4 py-3 sm:px-5 sm:py-4 mb-4 text-left">
+          <div className="bg-navy-800/50 border-l-4 border-l-cyan-glow/40 border border-cyan-glow/15 rounded-lg sm:rounded-xl px-4 py-3 sm:px-5 sm:py-4 mb-4 text-center">
             <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
-              명함을 통해 방문해 주셔서 감사합니다. 보험·보상 상담, 웹/앱·IT 구축, 유튜브 제작, 시뮬레이션·AI 교육 문의는
+              명함을 통해 방문해 주셔서 감사합니다.
+              <br />
+              <span className="text-cyan-glow font-semibold">보험·보상 상담, 웹/앱·IT 구축, 유튜브 제작, 시뮬레이션·AI 교육 문의</span>는
+              <br />
               아래 버튼으로 편하게 연락 주세요.
             </p>
           </div>
 
-          {/* CTA 버튼 - 모바일 컴팩트 */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-5 sm:mb-6">
+          {/* CTA 버튼 - 끝 맞춤 (카카오톡·전화 걸기·문자 보내기·FAX) */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-5 sm:mb-6">
           <a
             href={config.links.kakao}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-1.5 px-4 py-3 sm:px-5 sm:py-3.5 rounded-lg sm:rounded-xl bg-[#FEE500] text-[#191919] text-sm font-semibold hover:bg-[#fdd835] transition-colors"
+            className="flex items-center justify-center gap-1.5 px-3 py-3 rounded-lg bg-[#FEE500] text-[#191919] text-xs font-semibold hover:bg-[#fdd835] transition-colors"
           >
             <KakaoIcon />
             카카오톡 상담
           </a>
           <a
             href={`tel:${config.phone.replace(/-/g, '')}`}
-            className="inline-flex items-center justify-center gap-1.5 px-4 py-3 sm:px-5 sm:py-3.5 rounded-lg sm:rounded-xl border-2 border-cyan-glow text-cyan-glow text-sm font-semibold hover:bg-cyan-glow/10 transition-colors"
+            className="flex items-center justify-center gap-1.5 px-3 py-3 rounded-lg border-2 border-cyan-glow text-cyan-glow text-xs font-semibold hover:bg-cyan-glow/10 transition-colors"
           >
             <PhoneIcon />
             전화 걸기
           </a>
           <a
             href={`sms:${config.phone.replace(/-/g, '')}`}
-            className="inline-flex items-center justify-center gap-1.5 px-4 py-3 sm:px-5 sm:py-3.5 rounded-lg sm:rounded-xl border-2 border-gray-500 text-gray-200 text-sm font-semibold hover:border-cyan-glow hover:text-cyan-glow transition-colors"
+            className="flex items-center justify-center gap-1.5 px-3 py-3 rounded-lg border-2 border-gray-500 text-gray-200 text-xs font-semibold hover:border-cyan-glow hover:text-cyan-glow transition-colors"
           >
             문자 보내기
           </a>
           {config.fax && (
-            <span className="inline-flex items-center justify-center gap-1.5 px-4 py-3 sm:px-5 sm:py-3.5 rounded-lg sm:rounded-xl border-2 border-gray-600 text-gray-300 text-sm font-semibold">
+            <span className="flex items-center justify-center gap-1.5 px-3 py-3 rounded-lg border-2 border-gray-600 text-gray-300 text-xs font-semibold">
               FAX {config.fax}
             </span>
           )}
         </div>
-
-        <p className="text-gray-400 text-xs mb-4">
-          채팅 연결 후 <strong className="text-gray-300">명함으로 들어왔습니다</strong> 보내 주시면 출처 확인에 도움이 됩니다.{' '}
-          <button
-            type="button"
-            onClick={() => {
-              navigator.clipboard?.writeText('명함으로 들어왔습니다')
-            }}
-            className="text-cyan-glow hover:underline"
-          >
-            복사
-          </button>
-        </p>
 
         <p className="text-gray-500 text-xs mb-1">아래로 스크롤</p>
         <a
